@@ -1,0 +1,79 @@
+.spreadsheet-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: auto;
+  max-width: 100vw;
+  max-height: calc(100vh - 40px);
+  position: relative;
+}
+
+.row {
+  display: flex;
+}
+
+.row:first-child {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: #fff;
+}
+
+.cell {
+  width: 100px;
+  height: 22px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+}
+.cell:not(:has(input)) {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.cell > input {
+  z-index: 2;
+  min-width: 100px;
+  border: 2px solid rgb(33, 83, 192);
+}
+
+.row-header,
+.col-header {
+  background-color: #f7f7f7;
+  font-size: 12px;
+  color: rgb(88, 90, 89);
+  z-index: 1;
+  justify-content: center;
+  position: sticky;
+}
+
+.row-header {
+  left: 0;
+  width: 50px;
+}
+
+.col-header {
+  top: 0;
+}
+
+/* Had trouble getting this, the row headers, and input to work well together.
+ * Weird z-index stuff with the row headers and input. Something to do with position 
+ */
+.top-left-header {
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  background-color: #f0f0f0;
+  border-right: 4px solid rgb(192, 192, 192);
+  border-bottom: 4px solid rgb(192, 192, 192);
+}
+
+.selected {
+  background-color: #e2e8f0;
+}
+.selected-header {
+  background-color: rgb(208, 222,251);
+}
+.error {
+  background-color: rgba(255, 0, 0, 0.292);
+}

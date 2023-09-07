@@ -1,0 +1,61 @@
+/**
+ * Felt weird pulling in MUI for such a small project. 
+ * Introduced tailwind late, weird mix of styles.
+ * Should have just grabbed MUI.
+ */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overscroll-behavior: none;
+  font-family: 'Roboto', sans-serif !important;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.header {
+  flex: 0 0 40px;
+  max-height: 40px;
+  @apply p-2;
+  @apply flex;
+  @apply items-center;
+  @apply justify-between;
+}
+
+.content {
+  flex: 1 1 auto;
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow: auto;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+/* https: //v1.tailwindcss.com/components/buttons */
+.btn {
+  @apply py-1 px-4 rounded;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  min-width: 125px;
+}
+.btn.btn-blue {
+  @apply bg-blue-500 text-white;
+}
+.btn:active {
+  @apply brightness-90;
+}
+.btn-blue:hover {
+  @apply bg-blue-700;
+}
